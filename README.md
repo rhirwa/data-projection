@@ -1,0 +1,2 @@
+# Pokemon Game
+This little program parses a file input from the command line, and outputs a character with the maximum speed, the average attack of the characters, and a sorted list of Pokemon types with their count characters.
