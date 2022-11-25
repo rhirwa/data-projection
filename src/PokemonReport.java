@@ -6,34 +6,6 @@ import java.util.Scanner;
 
 public class PokemonReport {
 
-	public static void main(String[] args) {
-		String file = args[0];
-		ArrayList<String> dataList = new ArrayList<>();
-		try(Scanner s = new Scanner(new File(file))) {
-			while(s.hasNext()) {
-				String tokens[] = s.nextLine().trim().split(",");
-				String name = tokens[0];
-				String type = tokens[1];
-				String attack = tokens[2];
-				String defense = tokens[3];
-				String speed = tokens[4];
-				String gen = tokens[5];
-				dataList.add(name);
-				dataList.add(type);
-				dataList.add(attack);
-				dataList.add(defense);
-				dataList.add(speed);
-				dataList.add(gen);
-			}
-		} catch (FileNotFoundException e) {
-			System.err.println("File not found");
-			throw new RuntimeException (e);
-		}
-		System.out.println("The Pokemon with the maximum speed is: " + maximumSpeed(dataList));
-		System.out.printf("The average attack for 3rd generation Pokemons is: %.2f \n", averageAttack(dataList));
-		System.out.println("The sorted list of Pokemon types with count is: \n" + sortedListWithCount(dataList));
-	}
-	
 	public static String maximumSpeed(ArrayList<String> list) {
 		String pokemon = null;
 		int max = 0;
@@ -99,5 +71,32 @@ public class PokemonReport {
 		Collections.sort(types);
 		return types;
 	}
-
+	
+	public static void main(String[] args) {
+		String file = args[0];
+		ArrayList<String> dataList = new ArrayList<>();
+		try(Scanner s = new Scanner(new File(file))) {
+			while(s.hasNext()) {
+				String tokens[] = s.nextLine().trim().split(",");
+				String name = tokens[0];
+				String type = tokens[1];
+				String attack = tokens[2];
+				String defense = tokens[3];
+				String speed = tokens[4];
+				String gen = tokens[5];
+				dataList.add(name);
+				dataList.add(type);
+				dataList.add(attack);
+				dataList.add(defense);
+				dataList.add(speed);
+				dataList.add(gen);
+			}
+		} catch (FileNotFoundException e) {
+			System.err.println("File not found");
+			throw new RuntimeException (e);
+		}
+		System.out.println("The Pokemon with the maximum speed is: " + maximumSpeed(dataList));
+		System.out.printf("The average attack for 3rd generation Pokemons is: %.2f \n", averageAttack(dataList));
+		System.out.println("The sorted list of Pokemon types with count is: \n" + sortedListWithCount(dataList));
+	}
 }
