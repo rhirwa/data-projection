@@ -29,9 +29,9 @@ public class PokemonReport {
 			System.err.println("File not found");
 			throw new RuntimeException (e);
 		}
-		System.out.println("The Pokemon with the maximum speed is: " + PokemonReport.maximumSpeed(dataList));
-		System.out.printf("The average attack for 3rd generation Pokemons is: %.2f \n", PokemonReport.averageAttack(dataList));
-		System.out.println("The sorted list of Pokemon types with count is: \n" + PokemonReport.sortedListWithCount(dataList));
+		System.out.println("The Pokemon with the maximum speed is: " + maximumSpeed(dataList));
+		System.out.printf("The average attack for 3rd generation Pokemons is: %.2f \n", averageAttack(dataList));
+		System.out.println("The sorted list of Pokemon types with count is: \n" + sortedListWithCount(dataList));
 	}
 	
 	public static String maximumSpeed(ArrayList<String> list) {
